@@ -27,90 +27,94 @@ class BodyPart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: Stack(
-        children: [
-          ListTile(
-            contentPadding: const EdgeInsets.only(top: 35),
-            title: Container(
-              decoration: BoxDecoration(
-                color: Heading_color,
-                borderRadius: const BorderRadius.only(
-                  topRight: Radius.circular(15),
-                ),
-              ),
-              height: 50,
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    Heading,
-                    style: TextStyle(
-                        color: Heading_text_color,
-                        fontSize: Heading_font_size,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-            ),
-            subtitle: Card(
-              margin: EdgeInsets.zero,
-              color: Card_color,
-              shadowColor: Colors.black.withOpacity(.5),
-              elevation: 10,
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: Card_list +
-                      [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Button_color,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                              ),
-                              child: Text(
-                                Button_text,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-              top: 0,
-              left: 0,
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                alignment: Alignment.center,
+    var size = MediaQuery.of(context).size;
+    return SizedBox(
+      width: size.width > 600 ? size.width / 2.1 : size.width,
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Stack(
+          children: [
+            ListTile(
+              contentPadding: const EdgeInsets.only(top: 35),
+              title: Container(
                 decoration: BoxDecoration(
-                  color: Price_color,
+                  color: Heading_color,
                   borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(15),
-                    topLeft: Radius.circular(15),
                   ),
                 ),
                 height: 50,
-                child: Text(
-                  Price,
-                  style: TextStyle(
-                      fontSize: Price_font_size, color: Price_text_color),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      Heading,
+                      style: TextStyle(
+                          color: Heading_text_color,
+                          fontSize: Heading_font_size,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
                 ),
-              ))
-        ],
+              ),
+              subtitle: Card(
+                margin: EdgeInsets.zero,
+                color: Card_color,
+                shadowColor: Colors.black.withOpacity(.5),
+                elevation: 10,
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: Card_list +
+                        [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              ElevatedButton(
+                                onPressed: () {},
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Button_color,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                ),
+                                child: Text(
+                                  Button_text,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+                top: 0,
+                left: 0,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Price_color,
+                    borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(15),
+                      topLeft: Radius.circular(15),
+                    ),
+                  ),
+                  height: 50,
+                  child: Text(
+                    Price,
+                    style: TextStyle(
+                        fontSize: Price_font_size, color: Price_text_color),
+                  ),
+                ))
+          ],
+        ),
       ),
     );
   }

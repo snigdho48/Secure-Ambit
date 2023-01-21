@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'Launcher_Page.dart';
+import 'Pages/Features_Pages.dart';
+import 'Pages/Launcher_Page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       initialRoute: LauncherPage.routeName,
       routes: {
         LauncherPage.routeName: (_) => const LauncherPage(),
+        Features.routeName: (_) => const Features(),
       },
     );
   }

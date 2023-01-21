@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-Widget headerWidget(BuildContext context, {required String image_url}) {
+Widget headerWidget(BuildContext context,
+    {required String image_url,
+    required String Head_text,
+    required String Sub_text}) {
   return Column(
     children: [
       Container(
@@ -8,6 +11,7 @@ Widget headerWidget(BuildContext context, {required String image_url}) {
           color: Colors.deepOrange.shade800),
       Expanded(
           child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 5),
         width: double.infinity,
         alignment: Alignment.center,
         decoration: BoxDecoration(
@@ -24,17 +28,17 @@ Widget headerWidget(BuildContext context, {required String image_url}) {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              "Shared Web Hosting",
+              Head_text,
               textAlign: TextAlign.center,
               style: Theme.of(context)
                   .textTheme
                   .headline3!
                   .copyWith(color: Colors.white),
             ),
-            const Text(
-              "All of our packages include NVme SSD storage for the best performance.",
+            Text(
+              Sub_text,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
               ),
             ),

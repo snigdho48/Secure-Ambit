@@ -27,10 +27,7 @@ class MyDrawer extends StatelessWidget {
           ),
           ListTile(
             title: const Text('Features'),
-            onTap: () {
-              // Update the state of the app.
-              // ...
-            },
+            onTap: () => Navigator.pushNamed(context, '/features'),
           ),
           ListTile(
             title: const Text('Domain'),
