@@ -1,6 +1,6 @@
 # secure_ambit
 
-A new Flutter project.
+A new Flutter Hosting app UI project.
 
 ## Getting Started
 
